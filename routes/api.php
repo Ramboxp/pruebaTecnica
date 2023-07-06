@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+//Color
+Route::group(['prefix' => '/'], function () {
+    Route::resource('color', 'API\ColorController');
+    Route::resource('size', 'API\SizeController');
+    Route::resource('race', 'API\RaceController');
+    Route::resource('dog', 'API\DogController');
+});
