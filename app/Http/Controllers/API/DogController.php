@@ -16,7 +16,7 @@ class DogController extends Controller
     public function index()
     {
         try {
-            $dogs = Dog::all();
+            $dogs = Dog::orderBy('name')->get();
             return response()->json(['success' => true, 'data' => $dogs]);
         } catch (Throwable $th) {
             throw $th;
@@ -41,18 +41,18 @@ class DogController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required|unique:dog,name,except,id',
                 'age' => 'required|integer',
-                'weight' => 'required',
+                'weight' => 'required|numeric',
                 'race_id' =>  'required|in:' . implode(',', $raceID),
                 'color_id' => 'required|in:' . implode(',', $colorID),
                 'size_id' => 'required|in:' . implode(',', $sizeID),
-                'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
 
             ]);
 
             if ($validator->fails()) {
                 // Validation fail
                 $errors = $validator->errors();
-                return response()->json($errors);
+                return response()->json(['success' => false, 'error' => $errors]);
             } else {
 
                 //New dog
@@ -111,20 +111,19 @@ class DogController extends Controller
 
         try {
             $validator = Validator::make($request->all(), [
-                'name' => 'required|unique:dog,name,except,id',
-                'age' => 'required|integer',
-                'weight' => 'required',
-                'race_id' =>  'required|in:' . implode(',', $raceID),
-                'color_id' => 'required|in:' . implode(',', $colorID),
-                'size_id' => 'required|in:' . implode(',', $sizeID),
-                'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048'
-
+                'name' => 'string',
+                'age' => 'integer',
+                'weight' => 'numeric',
+                'race_id' =>  'in:' . implode(',', $raceID),
+                'color_id' => 'in:' . implode(',', $colorID),
+                'size_id' => 'in:' . implode(',', $sizeID),
+                'image' => $request->hasFile('image') ? 'image|mimes:jpg,png,jpeg,gif,svg|max:2048' : ""
             ]);
 
             if ($validator->fails()) {
                 // Validation fail
                 $errors = $validator->errors();
-                return response()->json($errors);
+                return response()->json(['success' => false, 'error' => $errors]);
             } else {
                 //Update dog
                 $dog->name = $request->name;
@@ -133,8 +132,8 @@ class DogController extends Controller
                 $dog->race_id = $request->race_id;
                 $dog->color_id = $request->color_id;
                 $dog->size_id = $request->size_id;
-                
-                if ($request->image != '') {
+
+                if ($request->hasFile('image') && $request->image != '') {
                     $imagen = $request->file('image');
                     $file_name =  time() . '_' . $imagen->getClientOriginalName();
                     $imagen->move(public_path('images'), $file_name);

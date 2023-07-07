@@ -13,7 +13,7 @@ class RaceController extends Controller
      public function index()
     {
         try {
-            $race = Race::all();
+            $race = Race::orderBy('name')->get();
             return response()->json(['success' => true,'data'=>$race]);
         } catch (Throwable $th) {
             throw $th;

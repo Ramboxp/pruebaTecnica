@@ -13,7 +13,7 @@ class ColorController extends Controller
     public function index()
     {
         try {
-            $colors = Color::all();
+            $colors = Color::orderBy('name')->get();
             return response()->json(['success' => true,'data'=>$colors]);
         } catch (Throwable $th) {
             throw $th;

@@ -20,5 +20,16 @@ class Dog extends Model
     {
         return $this->belongsTo(Race::class);
     }
-  
+    public function toArray()
+    {
+        $data = parent::toArray();
+
+        // Obtener los datos de las relaciones
+        $data['color'] = $this->color->toArray();
+        $data['size'] = $this->size->toArray();
+        $data['race'] = $this->race->toArray();
+        $data['image_path'] = asset('images/'.$this->image);
+
+        return $data;
+    }
 }

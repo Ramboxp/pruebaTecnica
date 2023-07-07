@@ -8,7 +8,6 @@ class Color extends Model
 {
     
     protected $table = "color";
-    protected $fillable = ['name'];
     
     public function dogs()
     {

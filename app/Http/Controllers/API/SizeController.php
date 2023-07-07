@@ -13,8 +13,8 @@ class SizeController extends Controller
     public function index()
     {
         try {
-            $size = Size::all();
-            return response()->json(['success' => true,'data'=>$size]);
+            $size = Size::orderBy('name')->get();
+            return response()->json(['success' => true, 'data' => $size]);
         } catch (Throwable $th) {
             throw $th;
         }
@@ -80,7 +80,7 @@ class SizeController extends Controller
                 //Salvando la instancia
                 $size->save();
             }
-            return response()->json(['success' => true,'data'=>$size]);
+            return response()->json(['success' => true, 'data' => $size]);
         } catch (Throwable $e) {
             return response()->json(['success' => false, 'error' => $e->getMessage()]);
         }
