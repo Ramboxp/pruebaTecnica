@@ -14,18 +14,20 @@ class CreateDogTable extends Migration
     public function up()
     {
         Schema::create('dog', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
             $table->string('weight');
             $table->integer('age');
             $table->string('image');
-            $table->bigInteger('race_id')->unsigned();
-            $table->bigInteger('color_id')->unsigned();
-            $table->bigInteger('size_id')->unsigned();
+            $table->unsignedInteger('race_id');
+            $table->unsignedInteger('color_id');
+            $table->unsignedInteger('size_id');
             $table->timestamps();
-            $table->foreign('race_id')->references('id')->on('race');
-            $table->foreign('color_id')->references('id')->on('color');
-            $table->foreign('size_id')->references('id')->on('size');
+
+            $table->foreign('race_id')->references('id')->on('race')->onDelete('restrict');
+            $table->foreign('color_id')->references('id')->on('color')->onDelete('restrict');
+            $table->foreign('size_id')->references('id')->on('size')->onDelete('restrict');
         });
     }
 

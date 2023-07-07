@@ -14,6 +14,7 @@ class CreateSizeTable extends Migration
     public function up()
     {
         Schema::create('size', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
             $table->string('scale');
