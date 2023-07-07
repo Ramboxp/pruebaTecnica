@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Throwable;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 
 class RaceController extends Controller
 {
-     public function index()
+    public function index()
     {
         try {
             $race = Race::orderBy('name')->get();
-            return response()->json(['success' => true,'data'=>$race]);
+            return response()->json(['success' => true, 'data' => $race]);
         } catch (Throwable $th) {
             throw $th;
         }
@@ -78,7 +80,7 @@ class RaceController extends Controller
                 //Salvando la instancia
                 $race->save();
             }
-            return response()->json(['success' => true,'data'=>$race]);
+            return response()->json(['success' => true, 'data' => $race]);
         } catch (Throwable $e) {
             return response()->json(['success' => false, 'error' => $e->getMessage()]);
         }
@@ -90,8 +92,16 @@ class RaceController extends Controller
             $race = Race::findOrFail($id);
             $race->delete();
             return response()->json(['success' => true]);
-        } catch (Throwable $e) {
-            return response()->json(['success' => false, 'error' => $e->getMessage()]);
+        } catch (ModelNotFoundException $e) {
+            // El elemento no existe
+            return response()->json(['success' => false, 'error' => 'El elemento no existe.']);
+        } catch (QueryException $e) {
+            // Captura la excepción de restricción de clave externa
+            if ($e->getCode() == '23000') {
+                return response()->json(['success' => false, 'error' => 'No puedes eliminar este elemento porque se encuentra en uso en otra entidad']);
+            }
+            // Otras excepciones de consulta
+            return response()->json(['success' => false, 'error' => 'Error al eliminar el elemento.']);
         }
     }
 }
