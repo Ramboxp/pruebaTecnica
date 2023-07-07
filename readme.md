@@ -7,34 +7,49 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Propósito y objetivos de la aplicación.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Aplicación API REST FULL PHP utilizando el framework de laravel en su versión 5.3. Creada para brindar su consumo a una SPA realizada en VueJS v3.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requerimeintos Tecnicos para el desarr
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+Composer version 2.2.21
+PHP <= 7.1
+MySql v5.7.31.
+Apache v2.4.46
+Framework: Laravel v5.3
+Postman
 
-## Learning Laravel
+## Instalacion y despliegue
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+1 -Descargar proyecto.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+2- Crear base de datos con nombre db_canes (dejare el sql en la raiz del proyeto).
 
-## Contributing
+3- Configurar .env para la conexion a la base de datos, cambiar el name al .env-example que subi.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+--------------- NOTA ----- IMPORTANTE--------
+Para poder acceder a la DB, en una nueva instalacion de Laravel 5.3, me lanzaba un error algo raro, el cual me mostraba que estaba usando la configuracion .env-exmple para conectar a la DB, limpie la configuracion del framework, pero no resultaba.
 
-## Security Vulnerabilities
+Por tanto, para poder desplegar e iniciar el desarrollo, apoyandome de informacion de comunidades, como https://stackoverflow.com , modifique el archivo (database.php) con los mismos valores de la configuracion de la db que hay en el fragmento dedicado para ello en el .env.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Asi fue que pudo arrancar la comunicacion entre mi backend php y Mysql.
 
-## License
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_canes
+DB_USERNAME=root
+DB_PASSWORD=
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+//Instalar dependencias
+4- composer install
+
+//Correr migraciones
+5- php artisan migrate
+
+//Levantar el server
+6- php artisan serve
+
+//Poblar la db (a eleccion)
+7-Correr las consultas de insert en mysql(dejo el datos_db_canes.sql en la raiz del proyecto).

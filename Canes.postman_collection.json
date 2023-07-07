@@ -1,0 +1,1066 @@
+{
+	"info": {
+		"_postman_id": "09ecd63c-2339-4c9d-9262-b38df561b9da",
+		"name": "Canes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Color",
+			"item": [
+				{
+					"name": "Index Color",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/color/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"color",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Lista todos los colores de perros."
+					},
+					"response": []
+				},
+				{
+					"name": "Show Color",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/color/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"color",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Devuelve un color de perro dado su id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create color",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Blanco\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/color",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"color"
+							]
+						},
+						"description": "Crea un color de perro dado su name."
+					},
+					"response": []
+				},
+				{
+					"name": "Update color",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Negro y Blanco\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/color/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"color",
+								"1"
+							]
+						},
+						"description": "Realiza el update de un color de perro"
+					},
+					"response": []
+				},
+				{
+					"name": "delete Color",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/color/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"color",
+								"2"
+							]
+						},
+						"description": "Elimina un  color de perro, dado el id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Size",
+			"item": [
+				{
+					"name": "Index Size",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/size",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"size"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Lista todos los tamannos de perros"
+					},
+					"response": []
+				},
+				{
+					"name": "Show Size",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/size/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"size",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Devuelve un tama;;o dado el id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create size",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"prueba\",\r\n    \"scale\":\"20-80 cm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/size",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"size"
+							]
+						},
+						"description": "Crea un tamanno dado el name y una escala"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Size",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"prueba 2\",\r\n    \"scale\":\"asdasd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/size/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"size",
+								"3"
+							]
+						},
+						"description": "Actualiza el tamanno."
+					},
+					"response": []
+				},
+				{
+					"name": "delete Size",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/size/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"size",
+								"3"
+							]
+						},
+						"description": "Elimina el tamaño dado el id."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Race",
+			"item": [
+				{
+					"name": "Index race",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/race/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"race",
+								"4"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Lista todos las razas de perros."
+					},
+					"response": []
+				},
+				{
+					"name": "Show race",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/race/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"race",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Dado el id, muestra el detalle de la raza."
+					},
+					"response": []
+				},
+				{
+					"name": "Create race",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"gfg \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/race",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"race"
+							]
+						},
+						"description": "Crea una raza de perro dado su nombre"
+					},
+					"response": []
+				},
+				{
+					"name": "Update race",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Sabuesos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/race/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"race",
+								"3"
+							]
+						},
+						"description": "Actualiza la raza pasada por parametros"
+					},
+					"response": []
+				},
+				{
+					"name": "delete race",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/race/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"race",
+								"6"
+							]
+						},
+						"description": "Elimina la raza"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dog",
+			"item": [
+				{
+					"name": "Index dog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dog",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dog"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Lista todos los perros."
+					},
+					"response": []
+				},
+				{
+					"name": "Show dog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "default",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dog/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dog",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "oscar",
+									"disabled": true
+								},
+								{
+									"key": "cEmail",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Dado un id, muestra los detalles de un perros."
+					},
+					"response": []
+				},
+				{
+					"name": "Create dog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Firulay",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "race_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "color_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "size_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Oscar/Pictures/Camera Roll/WIN_20230419_13_26_37_Pro.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dog",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dog"
+							]
+						},
+						"description": "Crea el perro"
+					},
+					"response": []
+				},
+				{
+					"name": "Update dog",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Firulay",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "race_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "color_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "size_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Oscar/Pictures/Camera Roll/WIN_20230419_13_26_37_Pro.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dog",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dog"
+							]
+						},
+						"description": "Actualiza el perro"
+					},
+					"response": []
+				},
+				{
+					"name": "delete dog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dog/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dog",
+								"3"
+							]
+						},
+						"description": "Elimina el perro"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

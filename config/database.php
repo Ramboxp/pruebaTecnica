@@ -56,7 +56,7 @@ return [
             'driver' => 'mysql',
             'host' => '127.0.0.1',
             'port' => env('DB_PORT', '3306'),
-            'database' => 'db_mascotas',
+            'database' => 'db_canes',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
